@@ -1,9 +1,13 @@
 import { faker } from "@faker-js/faker";
+
 class RegisterPage {
   constructor() {
     this.firstname = "";
     this.lastname = "";
+    this.email = "";
+    this.password = "";
   }
+
   verifyPageHeading() {
     cy.get("h1").should("be.visible").and("include.text", "Register");
   }
@@ -21,18 +25,18 @@ class RegisterPage {
     this.lastname = faker.person.lastName().toLocaleLowerCase();
     cy.get("#FirstName").type(this.firstname);
     cy.get("#LastName").type(this.lastname);
-    let email = faker.internet.email({
+    this.email = faker.internet.email({
       firstName: this.firstname,
       lastName: this.lastname,
       provider: "automation.com",
     });
-    cy.get("#Email").type(email);
+    cy.get("#Email").type(this.email);
   }
 
   fillPassword() {
-    let password = faker.internet.password({ length: 8 });
-    cy.get("#Password").type(password);
-    cy.get("#ConfirmPassword").type(password);
+    this.password = faker.internet.password({ length: 8 });
+    cy.get("#Password").type(this.password);
+    cy.get("#ConfirmPassword").type(this.password);
   }
 
   clickRegister() {
@@ -55,6 +59,17 @@ class RegisterPage {
     this.fillPassword();
     this.clickRegister();
     this.verifyRegistration();
+  }
+
+  getUserData() {
+    let userData = {
+      email: this.email,
+      password: this.password,
+    };
+    const filename = "user_data.json";
+    const data = JSON.stringify(userData, null, 2);
+
+    cy.task("writeToFile", { filename, data });
   }
 }
 

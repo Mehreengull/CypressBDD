@@ -13,4 +13,5 @@ When("I verify the heading", () => {
 
 Then("I should register new user", () => {
   register.registerNewUser();
+  register.getUserData();
 });

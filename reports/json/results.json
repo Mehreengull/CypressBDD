@@ -4,29 +4,42 @@
     "elements": [
       {
         "description": "",
-        "id": "sample-test;check-site-is-available",
+        "id": "login-with-registered-user;login-with-valid-user",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "Check site is available",
+        "line": 2,
+        "name": "Login with valid user",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
-            "name": "Visit the registration page",
+            "line": 3,
+            "name": "Open the login page",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 4315000000
+              "duration": 5286000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
-            "name": "I find the header logo",
+            "line": 4,
+            "name": "Enter login credentials",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2473000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "Verify successful login",
             "match": {
               "location": "not available:0"
             },
@@ -34,18 +47,66 @@
               "status": "passed",
               "duration": 24000000
             }
-          },
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-with-registered-user",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login with registered user",
+    "tags": [],
+    "uri": "cypress/e2e/login.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "register-user;register-a-new-user",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Register a new user",
+        "steps": [
           {
             "arguments": [],
-            "keyword": "Then ",
-            "line": 7,
-            "name": "I should see register heading",
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Open the registration page",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 2050000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I verify the heading",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should register new user",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4095000000
             }
           }
         ],
@@ -53,11 +114,11 @@
         "type": "scenario"
       }
     ],
-    "id": "sample-test",
-    "line": 2,
+    "id": "register-user",
+    "line": 1,
     "keyword": "Feature",
-    "name": "Sample Test",
+    "name": "Register User",
     "tags": [],
-    "uri": "cypress/e2e/tests.feature"
+    "uri": "cypress/e2e/register.feature"
   }
 ]
