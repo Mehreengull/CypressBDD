@@ -14,11 +14,11 @@
   "cypress-cucumber-preprocessor": {
     "json": {
       "enabled": true,
-      "output": "reports/json/results.json"
+      "output": "cypress/reports/json/results.json"
     },
     "html": {
       "enabled": true,
-      "output": "reports/html/results.html"
+      "output": "cypress/reports/html/results.html"
     },
     "step_definitions": "cypress/support/step_definitions/",
     "nonGlobalStepDefinitions": false
